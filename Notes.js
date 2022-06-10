@@ -398,3 +398,69 @@ fun();
 * lexical environment/ scope is the local memory along with the reference of its parent's lexical environment.
 * lexical scope has all the variables and functions
 */
+
+/* 
+! 13. FIRST CLASS FUNCTIONS
+* So during the hosting phase, function statement creates a memory and this function is assigned to it but in case of a function expression this it is treated like any other variable it is assigned undefined
+*/
+//! Function Statement/ Declaration  
+function fun1(params) {
+
+}
+
+//! Function Expression
+var fun2 = function (params) {
+
+}
+
+/*
+* Anonymous functions are used when the functions are used as values
+*/
+//! Anonymous Functions
+/*
+function (params) {
+
+}
+ */
+//* but this will be error because we cannot use function without a name but we can use it with Function Expression.
+
+var b = function (params) {
+
+}
+
+b(); //* correct
+
+//! Named Function Expression
+var fun2 = function name(params) {
+   name(); //* correct because it is created as a local variable. so we can access it inside the function body
+}
+
+fun2(); //* correct
+name(); //* wrong, reference error name is not defined
+
+/*
+* name function is used as a value so in this case this name function is not created in the outer scope/ global scope but it is created as a local variable.
+*/
+
+//! Parameters and Arguments
+/* 
+* The values which we pass inside a function are known as arguments and these label and identifier which gets those values are known as parameters
+*/
+function fun(params1, params2) {
+
+}
+
+fun(args1, args2);
+
+//! First class function
+
+/* 
+* Functions passed inside another functions as an arguments are treated as values e.g. anonymous function and you can even receive that function in the parameters. We can even return a function from a function
+
+! what is First class function
+? The ability of functions 
+* 1. to be used as values OR
+* 2. to be used as an argument to another functions OR
+* 3. to be returned from the functions is known as first class functions/ first class citizens
+
+*/
